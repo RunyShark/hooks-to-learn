@@ -1,13 +1,28 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
+import { Message } from "./Message";
+
 export const SimpleForm = () => {
   const [formState, setFormState] = useState({
     userName: "",
     email: "",
   });
   const { userName, email } = formState;
+  useEffect(() => {
+    console.log("useEffect called");
+  }, []);
+  useEffect(() => {
+    console.log("formState changed!");
+  }, [formState]);
+  useEffect(() => {
+    console.log("email changed");
+  }, [email]);
+  useEffect(() => {
+    return () => {};
+  }, []);
 
   const handleOnChange = ({ target }) => {
-    setFormState({ ...formState, [target.name]: target.value });
+    const { name, value } = target;
+    setFormState({ ...formState, [name]: value });
   };
   return (
     <>
@@ -30,6 +45,7 @@ export const SimpleForm = () => {
         placeholder="Email"
         onChange={handleOnChange}
       />
+      {userName === "" && <Message />}
     </>
   );
 };
