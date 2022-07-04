@@ -3,6 +3,7 @@ import {
   CounterWithCustomHooks,
   SimpleForm,
   FormWithCustomHook,
+  MultipleCustomHooks,
 } from "./components";
 export const HooksApp = () => {
   return (
@@ -19,8 +20,9 @@ export const HooksApp = () => {
       <SimpleForm />
       <br />
       <br />
-      <hr /> */}
-      <FormWithCustomHook />
+      <hr />
+        <FormWithCustomHook /> */}
+      <MultipleCustomHooks />
     </>
   );
 };
