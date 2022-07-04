@@ -8,12 +8,14 @@ export const MultipleCustomHooks = () => {
     <>
       <h1>BreakingBad Qoutes</h1>
       <hr />
-      {isLoading && <h1>Cargando....</h1>}
+      {isLoading && (
+        <div className="alert alert-info text-center">Loading...</div>
+      )}
       {hasError && (
         <>
           <h1>{hasError.name}</h1>
           <p>{hasError.code}</p>
-          <p>
+          <p className="mt-4" style={{ color: "red", fontSize: "20px" }}>
             Status 400, la id no puede ser letras o caracteres especiales y debe
             de ser un numero valido
           </p>
@@ -21,9 +23,21 @@ export const MultipleCustomHooks = () => {
       )}
       {data?.map(({ quote, author, series }) => (
         <>
-          <h3>{quote}</h3>
-          <p>{author}</p>
-          <span style={{ color: "Red" }}>{series}</span>
+          <blockquote className="blockquote text-center">
+            <p className="mb-1 ">{quote}</p>
+            <footer className="blockquote-footer " style={{ marginTop: "5px" }}>
+              {author}{" "}
+              <span
+                style={{
+                  color: "black",
+                  fontFamily: "-moz-initial",
+                  fontSize: "20px",
+                }}
+              >
+                {series}
+              </span>
+            </footer>
+          </blockquote>
         </>
       ))}
     </>
