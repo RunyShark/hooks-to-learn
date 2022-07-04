@@ -1,4 +1,4 @@
-import { CounterApp, CounterWithCustomHooks } from "./components";
+import { CounterApp, CounterWithCustomHooks, SimpleForm } from "./components";
 export const HooksApp = () => {
   return (
     <>
@@ -9,6 +9,10 @@ export const HooksApp = () => {
       <br />
       <hr />
       <CounterWithCustomHooks />
+      <br />
+      <br />
+      <hr />
+      <SimpleForm />
     </>
   );
 };
