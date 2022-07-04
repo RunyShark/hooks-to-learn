@@ -1,10 +1,14 @@
-import { CounterApp, CounterWithCustomHooks, SimpleForm } from "./components";
+import {
+  CounterApp,
+  CounterWithCustomHooks,
+  SimpleForm,
+  FormWithCustomHook,
+} from "./components";
 export const HooksApp = () => {
   return (
     <>
       <h1 style={{ textAlign: "center" }}>HooksApp</h1>
-      <CounterApp />
-
+      {/* <CounterApp />
       <br />
       <br />
       <hr />
@@ -13,6 +17,10 @@ export const HooksApp = () => {
       <br />
       <hr />
       <SimpleForm />
+      <br />
+      <br />
+      <hr /> */}
+      <FormWithCustomHook />
     </>
   );
 };
