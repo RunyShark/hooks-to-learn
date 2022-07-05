@@ -15,7 +15,6 @@ export const useFech = (url) => {
     try {
       const resp = await fetch(url);
       const data = await resp.json();
-      console.log(data);
 
       if (data.name === "error") {
         setState({

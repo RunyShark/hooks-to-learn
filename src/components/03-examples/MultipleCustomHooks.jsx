@@ -1,45 +1,29 @@
-import { useFech } from "../hooks";
+import { useFech, useCounter } from "../hooks";
+import { HasErrorCard, DataCard, LoadingQuote } from "./";
 
 export const MultipleCustomHooks = () => {
-  const url = "https://www.breakingbadapi.com/api/quotes/1";
+  const { incremet, decremente, counter } = useCounter();
+  const url = `https://www.breakingbadapi.com/api/quotes/${
+    counter === 0 ? 1 : counter
+  }`;
   const { data, hasError, isLoading } = useFech(url);
 
   return (
-    <>
+    <div>
       <h1>BreakingBad Qoutes</h1>
+
+      <button className="btn" onClick={() => incremet(1)}>
+        Otra
+      </button>
+      <button className="btn" onClick={() => decremente(1)}>
+        Anterio
+      </button>
       <hr />
-      {isLoading && (
-        <div className="alert alert-info text-center">Loading...</div>
-      )}
-      {hasError && (
-        <>
-          <h1>{hasError.name}</h1>
-          <p>{hasError.code}</p>
-          <p className="mt-4" style={{ color: "red", fontSize: "20px" }}>
-            Status 400, la id no puede ser letras o caracteres especiales y debe
-            de ser un numero valido
-          </p>
-        </>
-      )}
-      {data?.map(({ quote, author, series }) => (
-        <>
-          <blockquote className="blockquote text-center">
-            <p className="mb-1 ">{quote}</p>
-            <footer className="blockquote-footer " style={{ marginTop: "5px" }}>
-              {author}{" "}
-              <span
-                style={{
-                  color: "black",
-                  fontFamily: "-moz-initial",
-                  fontSize: "20px",
-                }}
-              >
-                {series}
-              </span>
-            </footer>
-          </blockquote>
-        </>
+      {isLoading && <LoadingQuote />}
+      {hasError && <HasErrorCard hasError={hasError} />}
+      {data?.map((data) => (
+        <DataCard key={data.name} {...data} />
       ))}
-    </>
+    </div>
   );
 };
