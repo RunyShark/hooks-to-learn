@@ -1,8 +1,8 @@
-export const TodoItem = ({ description, done }) => {
+export const TodoItem = ({ descrpcion, done }) => {
   return (
     <li className="list-group-item d-flex justify-content-between">
       <p>
-        {description}{" "}
+        {descrpcion}{" "}
         {done ? (
           <span style={{ color: "blue" }}> Tarea terminada </span>
         ) : (

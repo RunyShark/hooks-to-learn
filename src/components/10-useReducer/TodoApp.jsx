@@ -4,12 +4,12 @@ import { todoReducer, TodoList, TodoForm } from "./";
 const initalState = [
   {
     id: new Date().getTime(),
-    description: "Recolectar la piedra del Alma azul",
+    descrpcion: "Recolectar la piedra del Alma azul",
     done: false,
   },
   {
     id: new Date().getTime() * 2,
-    description: "Recolectar la piedra del Alma amarilla",
+    descrpcion: "Recolectar la piedra del Alma amarilla",
     done: false,
   },
 ];
@@ -17,7 +17,11 @@ export const TodoApp = () => {
   const [todos, dispatch] = useReducer(todoReducer, initalState);
 
   const handleNewTodo = (todo) => {
-    console.log(`Soy yo`, { todo });
+    const action = {
+      type: "[TODO] Add Todo",
+      payload: todo,
+    };
+    dispatch(action);
   };
 
   return (
