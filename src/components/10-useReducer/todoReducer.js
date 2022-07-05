@@ -17,13 +17,15 @@ export const todoReducer = (initialState = [], action) => {
       return remplazo;
 
     case "[TODO] end one taks":
-      const endTaks = initialState.find((data) => data.id === action.payload);
-      if (endTaks) {
-        endTaks.done = true;
-        return [...initialState];
-      }
-
-      return [...initialState];
+      return initialState.map((todo) => {
+        if (todo.id === action.payload) {
+          return {
+            ...todo,
+            done: !todo.done,
+          };
+        }
+        return todo;
+      });
 
     default:
       return initialState;

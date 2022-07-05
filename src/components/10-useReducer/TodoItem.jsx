@@ -10,7 +10,7 @@ export const TodoItem = ({ descrpcion, done, id, deleteOne, endUp }) => {
         )}
       </p>
       <button className="btn btn-primary" onClick={() => endUp(id)}>
-        Terminar
+        {done ? "Volver a pendiene" : "Finalizar tarea"}
       </button>
       <button className="btn btn-danger" onClick={() => deleteOne(id)}>
         Borrar
