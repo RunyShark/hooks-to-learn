@@ -9,6 +9,7 @@ import {
   Memorize,
   MemoHook,
   UseCallBackHook,
+  Padre,
 } from "./components";
 export const HooksApp = () => {
   return (
@@ -24,8 +25,9 @@ export const HooksApp = () => {
       <Layout />
       <Memorize />
       <MemoHook />
-      */}
       <UseCallBackHook />
+      */}
+      <Padre />
     </>
   );
 };

@@ -10,3 +10,4 @@ export * from "./06-memos/Memorize";
 export * from "./07-useMemo/MemoHook";
 export * from "./helpers/heavyStuff";
 export * from "./08-useCallback/UseCallBackHook";
+export * from "./09-practica/Padre";
