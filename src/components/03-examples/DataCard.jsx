@@ -1,10 +1,21 @@
-import React from "react";
+import React, { useLayoutEffect, useRef, useState } from "react";
 
 export const DataCard = ({ quote, author, series }) => {
+  const [boxSize, setBoxSize] = useState({ width: 0, height: 0 });
+  const pRef = useRef();
+  useLayoutEffect(() => {
+    const { width, height } = pRef.current.getBoundingClientRect();
+    setBoxSize({ width, height });
+  }, []);
   return (
-    <div>
-      <blockquote className="blockquote text-center">
-        <p className="mb-1 ">{quote}</p>
+    <>
+      <blockquote
+        className="blockquote text-center"
+        style={{ display: "flex" }}
+      >
+        <p className="mb-1 " ref={pRef}>
+          {quote}
+        </p>
         <footer className="blockquote-footer " style={{ marginTop: "5px" }}>
           {author}{" "}
           <span
@@ -18,6 +29,9 @@ export const DataCard = ({ quote, author, series }) => {
           </span>
         </footer>
       </blockquote>
-    </div>
+      <>
+        <h5 style={{ color: "red" }}>{JSON.stringify(boxSize)}</h5>
+      </>
+    </>
   );
 };
