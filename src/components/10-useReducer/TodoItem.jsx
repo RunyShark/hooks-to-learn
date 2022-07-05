@@ -1,4 +1,4 @@
-export const TodoItem = ({ descrpcion, done, deleteOne, endUp }) => {
+export const TodoItem = ({ descrpcion, done, id, deleteOne, endUp }) => {
   return (
     <li className="list-group-item d-flex justify-content-between">
       <p>
@@ -9,10 +9,10 @@ export const TodoItem = ({ descrpcion, done, deleteOne, endUp }) => {
           <span style={{ color: "red" }}> Tarea pendiente </span>
         )}
       </p>
-      <button className="btn btn-primary" onClick={() => endUp(3)}>
+      <button className="btn btn-primary" onClick={() => endUp(id)}>
         Terminar
       </button>
-      <button className="btn btn-danger" onClick={() => deleteOne(3)}>
+      <button className="btn btn-danger" onClick={() => deleteOne(id)}>
         Borrar
       </button>
     </li>
