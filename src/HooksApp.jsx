@@ -4,25 +4,20 @@ import {
   SimpleForm,
   FormWithCustomHook,
   MultipleCustomHooks,
+  FocusScreen,
 } from "./components";
 export const HooksApp = () => {
   return (
     <>
       <h1 style={{ textAlign: "center" }}>HooksApp</h1>
-      {/* <CounterApp />
-      <br />
-      <br />
-      <hr />
+      {/* 
+      <CounterApp />
       <CounterWithCustomHooks />
-      <br />
-      <br />
-      <hr />
       <SimpleForm />
-      <br />
-      <br />
-      <hr />
-        <FormWithCustomHook /> */}
+      <FormWithCustomHook /> 
       <MultipleCustomHooks />
+      */}
+      <FocusScreen />
     </>
   );
 };
