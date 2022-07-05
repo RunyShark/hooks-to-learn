@@ -26,6 +26,7 @@ export const HooksApp = () => {
       <Memorize />
       <MemoHook />
       <UseCallBackHook />
+     
       */}
       <Padre />
     </>
