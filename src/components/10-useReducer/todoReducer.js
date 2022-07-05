@@ -11,10 +11,7 @@ export const todoReducer = (initialState = [], action) => {
       }
       return [...initialState, action.payload];
     case "[TODO] delete one taks":
-      const remplazo = initialState.filter(
-        (data) => data.id !== action.payload
-      );
-      return remplazo;
+      return initialState.filter((data) => data.id !== action.payload);
 
     case "[TODO] end one taks":
       return initialState.map((todo) => {
