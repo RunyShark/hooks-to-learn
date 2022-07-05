@@ -6,6 +6,7 @@ import {
   MultipleCustomHooks,
   FocusScreen,
   Layout,
+  Memorize,
 } from "./components";
 export const HooksApp = () => {
   return (
@@ -18,9 +19,9 @@ export const HooksApp = () => {
       <FormWithCustomHook /> 
       <MultipleCustomHooks />
       <FocusScreen />
-      */}
-
       <Layout />
+      */}
+      <Memorize />
     </>
   );
 };
