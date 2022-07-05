@@ -1,23 +1,7 @@
 import { useReducer } from "react";
 import { todoReducer, TodoList, TodoForm } from "./";
 
-const initalState = [
-  {
-    id: 1,
-    descrpcion: "Recolectar la piedra del Alma azul",
-    done: false,
-  },
-  {
-    id: 2,
-    descrpcion: "Recolectar la piedra del Alma amarilla",
-    done: false,
-  },
-  {
-    id: 3,
-    descrpcion: "Recolectar la piedra del Alma amarillaaa",
-    done: false,
-  },
-];
+const initalState = [];
 export const TodoApp = () => {
   const [todos, dispatch] = useReducer(todoReducer, initalState);
 

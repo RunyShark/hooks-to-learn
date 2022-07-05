@@ -9,7 +9,7 @@ export const TodoForm = ({ onNewTodo }) => {
     event.preventDefault();
     if (descrpcion.length <= 1) return;
     const addNewTodo = {
-      id: new Date().getTime() * 2,
+      id: new Date().getTime(),
       descrpcion,
       done: false,
     };
