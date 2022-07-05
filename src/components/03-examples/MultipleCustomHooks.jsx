@@ -11,7 +11,6 @@ export const MultipleCustomHooks = () => {
   return (
     <div>
       <h1>BreakingBad Qoutes</h1>
-
       <button className="btn" onClick={() => incremet(1)}>
         Otra
       </button>
@@ -19,11 +18,12 @@ export const MultipleCustomHooks = () => {
         Anterio
       </button>
       <hr />
-      {isLoading && <LoadingQuote />}
       {hasError && <HasErrorCard hasError={hasError} />}
-      {data?.map((data) => (
-        <DataCard key={data.name} {...data} />
-      ))}
+      {isLoading ? (
+        <LoadingQuote />
+      ) : (
+        data?.map((data) => <DataCard key={data.name} {...data} />)
+      )}
     </div>
   );
 };
