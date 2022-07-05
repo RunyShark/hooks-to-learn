@@ -3,13 +3,18 @@ import { todoReducer, TodoList, TodoForm } from "./";
 
 const initalState = [
   {
-    id: new Date().getTime(),
+    id: 1,
     descrpcion: "Recolectar la piedra del Alma azul",
     done: false,
   },
   {
-    id: new Date().getTime() * 2,
+    id: 2,
     descrpcion: "Recolectar la piedra del Alma amarilla",
+    done: false,
+  },
+  {
+    id: 3,
+    descrpcion: "Recolectar la piedra del Alma amarillaaa",
     done: false,
   },
 ];
@@ -23,6 +28,20 @@ export const TodoApp = () => {
     };
     dispatch(action);
   };
+  const deleteOneTaks = (id) => {
+    const action = {
+      type: "[TODO] delete one taks",
+      payload: id,
+    };
+    dispatch(action);
+  };
+  const endTaks = (id) => {
+    const action = {
+      type: "[TODO] end one taks",
+      payload: id,
+    };
+    dispatch(action);
+  };
 
   return (
     <>
@@ -31,7 +50,9 @@ export const TodoApp = () => {
       </h1>
       <hr />
       <div className="row">
-        <div className="col-7">{<TodoList value={todos} />}</div>
+        <div className="col-7">
+          {<TodoList value={todos} deleteOne={deleteOneTaks} endUp={endTaks} />}
+        </div>
         <div className="col-5">
           <h4>Agregar Todo</h4>
           <hr />
