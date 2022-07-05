@@ -1,9 +1,15 @@
-import { useReducer } from "react";
+import { useReducer, useEffect } from "react";
 import { todoReducer, TodoList, TodoForm } from "./";
 
 const initalState = [];
+const init = () => {
+  return JSON.parse(localStorage.getItem("todos")) || [];
+};
 export const TodoApp = () => {
-  const [todos, dispatch] = useReducer(todoReducer, initalState);
+  const [todos, dispatch] = useReducer(todoReducer, initalState, init);
+  useEffect(() => {
+    localStorage.setItem("todos", JSON.stringify(todos));
+  }, [todos]);
 
   const handleNewTodo = (todo) => {
     const action = {

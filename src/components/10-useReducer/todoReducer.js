@@ -22,6 +22,7 @@ export const todoReducer = (initialState = [], action) => {
         endTaks.done = true;
         return [...initialState];
       }
+
       return [...initialState];
 
     default:
