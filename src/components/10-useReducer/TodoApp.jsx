@@ -1,0 +1,39 @@
+import { useReducer } from "react";
+import { todoReducer, TodoList, TodoForm } from "./";
+
+const initalState = [
+  {
+    id: new Date().getTime(),
+    description: "Recolectar la piedra del Alma azul",
+    done: false,
+  },
+  {
+    id: new Date().getTime() * 2,
+    description: "Recolectar la piedra del Alma amarilla",
+    done: false,
+  },
+];
+export const TodoApp = () => {
+  const [todos, dispatch] = useReducer(todoReducer, initalState);
+
+  const handleNewTodo = (todo) => {
+    console.log(`Soy yo`, { todo });
+  };
+
+  return (
+    <>
+      <h1>
+        App Todo 10 <span>pendientes {todos.length}</span>
+      </h1>
+      <hr />
+      <div className="row">
+        <div className="col-7">{<TodoList value={todos} />}</div>
+        <div className="col-5">
+          <h4>Agregar Todo</h4>
+          <hr />
+          {<TodoForm onNewTodo={handleNewTodo} />}
+        </div>
+      </div>
+    </>
+  );
+};

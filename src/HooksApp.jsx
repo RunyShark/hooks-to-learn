@@ -10,6 +10,7 @@ import {
   MemoHook,
   UseCallBackHook,
   Padre,
+  TodoApp,
 } from "./components";
 export const HooksApp = () => {
   return (
@@ -26,9 +27,10 @@ export const HooksApp = () => {
       <Memorize />
       <MemoHook />
       <UseCallBackHook />
-     
-      */}
       <Padre />
+      */}
+
+      <TodoApp />
     </>
   );
 };
