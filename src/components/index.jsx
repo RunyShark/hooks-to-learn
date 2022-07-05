@@ -7,3 +7,5 @@ export * from "./03-examples/MultipleCustomHooks";
 export * from "./04-useRef/FocusScreen";
 export * from "./05-useLayautEffect/Layout";
 export * from "./06-memos/Memorize";
+export * from "./07-useMemo/MemoHook";
+export * from "./helpers/heavyStuff";
