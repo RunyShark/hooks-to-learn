@@ -11,6 +11,7 @@ import {
   UseCallBackHook,
   Padre,
   TodoApp,
+  MainApp,
 } from "./components";
 export const HooksApp = () => {
   return (
@@ -28,9 +29,9 @@ export const HooksApp = () => {
       <MemoHook />
       <UseCallBackHook />
       <Padre />
-      */}
-
       <TodoApp />
+      */}
+      <MainApp />
     </>
   );
 };
