@@ -1,7 +1,6 @@
 export const todoReducer = (initialState = [], action) => {
   switch (action.type) {
     case "[TODO] Add Todo":
-      console.log(initialState);
       if (
         initialState.find(
           (data) => data.descrpcion === action.payload.descrpcion
@@ -21,6 +20,7 @@ export const todoReducer = (initialState = [], action) => {
             done: !todo.done,
           };
         }
+
         return todo;
       });
 
